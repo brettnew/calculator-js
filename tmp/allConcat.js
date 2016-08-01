@@ -8,8 +8,15 @@ $(document).ready(function() {
     var userColor = $('#user_color').val();
     var simpleCalculator = new Calculator(userColor);
     var result = simpleCalculator.add(input1, input2);
-    $('form#calculator-form').css("background", "green");
     $('#solution').append("<li>" + result + "</li>");
+  });
+});
 
+$(document).ready(function(){
+  $('#signup').submit(function(event){
+    event.preventDefault();
+    var email = $('#email').val();
+    $('#signup').hide();
+    $('#solution').prepend('<p>Thank you, ' + email + ' has been added to our list!</p>');
   });
 });
